@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import { Section } from '../ui/Section'
-import { Button } from '../ui/Button'
 import { FiPhone, FiMail } from 'react-icons/fi'
 import { COMPANY_INFO } from '@/constants'
 
@@ -33,9 +32,11 @@ export function CTASection() {
         </div>
         
         <Link to="/contacto">
-          <Button size="lg" variant="secondary" className="bg-white text-primary-600 hover:bg-primary-50">
+          <button 
+            className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-lg bg-white text-primary-600 hover:bg-primary-50 hover:text-primary-700 shadow-xl hover:shadow-2xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-600"
+          >
             Solicitar Cotización Gratuita
-          </Button>
+          </button>
         </Link>
       </div>
     </Section>

@@ -20,8 +20,9 @@ export function Header() {
               alt={`${COMPANY_INFO.name} Logo`}
               className="h-12 w-auto object-contain"
             />
-            <span className="text-xl font-display font-bold text-secondary-900">
-              {COMPANY_INFO.name}
+            <span className="text-xl font-display font-bold">
+              <span className="text-primary-600">Cooling</span>
+              <span className="text-black">Perú</span>
             </span>
           </Link>
           
