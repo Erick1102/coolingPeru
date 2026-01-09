@@ -29,10 +29,17 @@ export function BenefitsSection() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {BENEFITS.map((benefit, index) => {
           const IconComponent = iconMap[benefit.icon] || FaAward
+          const colorClasses = [
+            'bg-primary-600',
+            'bg-teal-500',
+            'bg-accent-500',
+            'bg-coral-500',
+          ]
+          const bgColor = colorClasses[index % colorClasses.length]
           
           return (
             <div key={index} className="text-center">
-              <div className="w-20 h-20 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+              <div className={`w-20 h-20 ${bgColor} rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg hover:scale-110 transition-transform duration-300`}>
                 <IconComponent className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-xl font-display font-semibold text-secondary-900 mb-2">

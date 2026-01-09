@@ -3,6 +3,7 @@ import { Section } from '../ui/Section'
 import { Card } from '../ui/Card'
 import { Button } from '../ui/Button'
 import { SERVICES } from '@/constants'
+import { FiCheck } from 'react-icons/fi'
 import { 
   FaTools, 
   FaWrench, 
@@ -30,13 +31,20 @@ export function ServicesSection() {
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {SERVICES.map((service) => {
+        {SERVICES.map((service, index) => {
           const IconComponent = iconMap[service.icon] || FaTools
+          const colorClasses = [
+            { bg: 'bg-primary-100', text: 'text-primary-600', check: 'text-primary-600' },
+            { bg: 'bg-teal-100', text: 'text-teal-600', check: 'text-teal-600' },
+            { bg: 'bg-accent-100', text: 'text-accent-600', check: 'text-accent-600' },
+            { bg: 'bg-coral-100', text: 'text-coral-600', check: 'text-coral-600' },
+          ]
+          const colors = colorClasses[index % colorClasses.length]
           
           return (
             <Card key={service.id} hover className="text-center">
-              <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <IconComponent className="w-8 h-8 text-primary-600" />
+              <div className={`w-16 h-16 ${colors.bg} rounded-full flex items-center justify-center mx-auto mb-4`}>
+                <IconComponent className={`w-8 h-8 ${colors.text}`} />
               </div>
               <h3 className="text-xl font-display font-semibold text-secondary-900 mb-3">
                 {service.title}
@@ -45,9 +53,9 @@ export function ServicesSection() {
                 {service.description}
               </p>
               <ul className="text-sm text-secondary-500 space-y-2 mb-6 text-left">
-                {service.features.map((feature, index) => (
-                  <li key={index} className="flex items-start">
-                    <span className="text-primary-600 mr-2">✓</span>
+                {service.features.map((feature, idx) => (
+                  <li key={idx} className="flex items-start">
+                    <FiCheck className={`${colors.check} mr-2 flex-shrink-0 mt-0.5 w-4 h-4`} />
                     {feature}
                   </li>
                 ))}

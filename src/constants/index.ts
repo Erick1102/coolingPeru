@@ -18,11 +18,19 @@ export const SERVICES = [
     title: 'Instalación Profesional',
     description: 'Instalación certificada de sistemas de aire acondicionado con garantía de calidad.',
     icon: 'FaTools',
+    badge: 'Más Popular',
+    badgeVariant: 'accent' as const,
     features: [
       'Instalación certificada',
       'Garantía de trabajo',
       'Técnicos especializados',
       'Limpieza post-instalación',
+    ],
+    process: [
+      'Consulta y evaluación',
+      'Presupuesto detallado',
+      'Instalación profesional',
+      'Garantía extendida',
     ],
   },
   {
@@ -30,11 +38,19 @@ export const SERVICES = [
     title: 'Mantenimiento Preventivo',
     description: 'Mantenimiento regular para optimizar el rendimiento y prolongar la vida útil de tu equipo.',
     icon: 'FaWrench',
+    badge: 'Recomendado',
+    badgeVariant: 'teal' as const,
     features: [
       'Limpieza profunda',
       'Revisión de componentes',
       'Optimización de rendimiento',
       'Reporte detallado',
+    ],
+    process: [
+      'Inspección inicial',
+      'Limpieza completa',
+      'Ajustes y calibración',
+      'Reporte de estado',
     ],
   },
   {
@@ -42,11 +58,19 @@ export const SERVICES = [
     title: 'Reparación y Servicio Técnico',
     description: 'Servicio técnico especializado para resolver cualquier problema con tu equipo.',
     icon: 'FaCog',
+    badge: '24/7',
+    badgeVariant: 'coral' as const,
     features: [
       'Diagnóstico gratuito',
       'Reparación rápida',
       'Repuestos originales',
       'Servicio de emergencia',
+    ],
+    process: [
+      'Diagnóstico gratuito',
+      'Cotización de reparación',
+      'Reparación profesional',
+      'Prueba y garantía',
     ],
   },
   {
@@ -54,11 +78,19 @@ export const SERVICES = [
     title: 'Consultoría Técnica',
     description: 'Asesoramiento profesional para elegir el mejor sistema según tus necesidades.',
     icon: 'FaLightbulb',
+    badge: 'Sin Costo',
+    badgeVariant: 'success' as const,
     features: [
       'Análisis de necesidades',
       'Cálculo de carga térmica',
       'Recomendaciones personalizadas',
       'Presupuesto sin compromiso',
+    ],
+    process: [
+      'Análisis de espacio',
+      'Cálculo de BTU',
+      'Recomendación técnica',
+      'Presupuesto personalizado',
     ],
   },
 ]

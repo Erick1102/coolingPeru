@@ -17,7 +17,7 @@ export function CTASection() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
           <a
             href={`tel:${COMPANY_INFO.phone}`}
-            className="inline-flex items-center justify-center space-x-2 bg-white text-primary-600 px-6 py-3 rounded-lg font-semibold hover:bg-primary-50 transition-colors"
+            className="inline-flex items-center justify-center space-x-2 bg-white text-primary-600 px-6 py-3 rounded-lg font-semibold hover:bg-teal-50 hover:text-teal-600 transition-colors shadow-lg hover:shadow-xl"
           >
             <FiPhone className="w-5 h-5" />
             <span>Llamar Ahora</span>
@@ -33,7 +33,7 @@ export function CTASection() {
         
         <Link to="/contacto">
           <button 
-            className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-lg bg-white text-primary-600 hover:bg-primary-50 hover:text-primary-700 shadow-xl hover:shadow-2xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-600"
+            className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-lg bg-accent-500 text-white hover:bg-accent-600 shadow-xl hover:shadow-2xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent-300 focus:ring-offset-2 focus:ring-offset-primary-600"
           >
             Solicitar Cotización Gratuita
           </button>
