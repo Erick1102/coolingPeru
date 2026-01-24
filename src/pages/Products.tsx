@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/Button'
 import { Badge } from '@/components/ui/Badge'
 import { BTUSCalculator } from '@/components/ui/BTUSCalculator'
 import { Link } from 'react-router-dom'
-import { PRODUCT_CATEGORIES } from '@/constants'
+import { PRODUCT_CATEGORIES, EQUIPMENT_TYPES } from '@/constants'
 import { FiCheck, FiDollarSign } from 'react-icons/fi'
 
 type Category = 'residential' | 'commercial' | 'industrial' | 'all'
@@ -85,6 +85,41 @@ export function Products() {
       </Section>
       
       <Section background="white">
+        {/* Tipos de Equipos */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-display font-bold text-secondary-900 mb-6 text-center">
+            Trabajamos con Todas las Marcas
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <Card className="p-6">
+              <h3 className="text-xl font-display font-semibold text-secondary-900 mb-4">
+                {EQUIPMENT_TYPES.airConditioning.title}
+              </h3>
+              <ul className="space-y-2">
+                {EQUIPMENT_TYPES.airConditioning.types.map((type, index) => (
+                  <li key={index} className="flex items-start text-secondary-700">
+                    <FiCheck className="w-5 h-5 text-primary-600 mr-2 flex-shrink-0 mt-0.5" />
+                    <span>{type}</span>
+                  </li>
+                ))}
+              </ul>
+            </Card>
+            <Card className="p-6">
+              <h3 className="text-xl font-display font-semibold text-secondary-900 mb-4">
+                {EQUIPMENT_TYPES.refrigeration.title}
+              </h3>
+              <ul className="space-y-2">
+                {EQUIPMENT_TYPES.refrigeration.types.map((type, index) => (
+                  <li key={index} className="flex items-start text-secondary-700">
+                    <FiCheck className="w-5 h-5 text-teal-600 mr-2 flex-shrink-0 mt-0.5" />
+                    <span>{type}</span>
+                  </li>
+                ))}
+              </ul>
+            </Card>
+          </div>
+        </div>
+        
         {/* Category Filter Mejorado */}
         <div className="mb-8">
           <div className="flex flex-wrap justify-center gap-4 mb-4">

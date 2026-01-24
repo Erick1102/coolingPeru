@@ -1,8 +1,7 @@
 import { Section } from '@/components/ui/Section'
 import { Card } from '@/components/ui/Card'
 import { Stat } from '@/components/ui/Stats'
-import { Timeline } from '@/components/ui/Timeline'
-import { BENEFITS } from '@/constants'
+import { BENEFITS, COMPANY_VALUES, CLIENTS } from '@/constants'
 import { 
   FaAward, 
   FaShieldAlt, 
@@ -11,7 +10,11 @@ import {
   FaUsers,
   FaStar,
   FaBuilding,
-  FaClock as FaClock24
+  FaClock as FaClock24,
+  FaHandshake,
+  FaUserTie,
+  FaLock,
+  FaChartLine
 } from 'react-icons/fa'
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -81,51 +84,59 @@ export function About() {
           </div>
         </div>
         
-        {/* Timeline */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-display font-bold text-secondary-900 mb-8 text-center">
-            Nuestra Trayectoria
-          </h2>
-          <Timeline
-            items={[
-              {
-                year: '2014',
-                title: 'Fundación',
-                description: 'CoolingPerú inicia operaciones con un equipo pequeño pero comprometido con la excelencia.',
-              },
-              {
-                year: '2017',
-                title: 'Expansión',
-                description: 'Ampliamos nuestros servicios a nivel nacional y certificamos a nuestro equipo técnico.',
-              },
-              {
-                year: '2020',
-                title: 'Reconocimiento',
-                description: 'Alcanzamos más de 500 clientes satisfechos y recibimos certificaciones internacionales.',
-              },
-              {
-                year: '2024',
-                title: 'Liderazgo',
-                description: 'Nos consolidamos como líderes en climatización en el Perú con más de 1000 instalaciones.',
-              },
-            ]}
-          />
+        {/* Misión, Visión y Valores */}
+        <div className="space-y-12 mb-16">
+          <div className="bg-primary-50 rounded-xl p-8 md:p-12">
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-3xl font-display font-bold text-secondary-900 mb-4">
+                Nuestra Misión
+              </h2>
+              <p className="text-lg text-secondary-700">
+                {COMPANY_VALUES.mission}
+              </p>
+            </div>
+          </div>
+          
+          <div className="bg-teal-50 rounded-xl p-8 md:p-12">
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-3xl font-display font-bold text-secondary-900 mb-4">
+                Nuestra Visión
+              </h2>
+              <p className="text-lg text-secondary-700">
+                {COMPANY_VALUES.vision}
+              </p>
+            </div>
+          </div>
         </div>
         
+        {/* Valores */}
         <div className="mb-16">
           <h2 className="text-3xl font-display font-bold text-secondary-900 mb-8 text-center">
             Nuestros Valores
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {BENEFITS.map((benefit, index) => {
-              const IconComponent = iconMap[benefit.icon] || FaAward
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {COMPANY_VALUES.values.map((value, index) => {
               const colorClasses = [
                 { bg: 'bg-primary-100', text: 'text-primary-600' },
                 { bg: 'bg-teal-100', text: 'text-teal-600' },
                 { bg: 'bg-accent-100', text: 'text-accent-600' },
                 { bg: 'bg-coral-100', text: 'text-coral-600' },
+                { bg: 'bg-success-100', text: 'text-success-600' },
+                { bg: 'bg-primary-200', text: 'text-primary-700' },
               ]
               const colors = colorClasses[index % colorClasses.length]
+              
+              // Mapa de iconos para cada valor
+              const valueIconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+                FaHandshake,
+                FaUserTie,
+                FaShieldAlt,
+                FaAward,
+                FaLock,
+                FaChartLine,
+              }
+              
+              const IconComponent = valueIconMap[value.icon] || FaHandshake
               
               return (
                 <Card key={index} hover className="text-center">
@@ -133,10 +144,10 @@ export function About() {
                     <IconComponent className={`w-8 h-8 ${colors.text}`} />
                   </div>
                   <h3 className="text-xl font-display font-semibold text-secondary-900 mb-2">
-                    {benefit.title}
+                    {value.title}
                   </h3>
                   <p className="text-secondary-600">
-                    {benefit.description}
+                    {value.description}
                   </p>
                 </Card>
               )
@@ -144,23 +155,31 @@ export function About() {
           </div>
         </div>
         
-        <div className="bg-secondary-50 rounded-xl p-8 md:p-12">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-display font-bold text-secondary-900 mb-4">
-              Nuestra Misión
-            </h2>
-            <p className="text-lg text-secondary-700 mb-6">
-              Proporcionar soluciones de climatización de la más alta calidad, 
-              combinando experiencia técnica, productos de primera línea y un servicio 
-              al cliente excepcional, para crear ambientes cómodos y eficientes.
-            </p>
-            <h2 className="text-3xl font-display font-bold text-secondary-900 mb-4 mt-8">
-              Nuestra Visión
-            </h2>
-            <p className="text-lg text-secondary-700">
-              Ser la empresa líder en climatización en el Perú, reconocida por nuestra 
-              excelencia, innovación y compromiso con la satisfacción del cliente.
-            </p>
+        {/* Clientes */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-display font-bold text-secondary-900 mb-8 text-center">
+            Algunos de Nuestros Clientes
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {CLIENTS.map((client, index) => (
+              <Card key={index} className="text-center p-4 hover:shadow-lg transition-shadow flex flex-col items-center justify-center min-h-[150px]">
+                {client.image ? (
+                  <div className="mb-3 flex items-center justify-center h-24">
+                    <img 
+                      src={client.image} 
+                      alt={client.name}
+                      className="max-h-full max-w-full object-contain"
+                      loading="lazy"
+                    />
+                  </div>
+                ) : (
+                  <div className="flex items-center justify-center mb-3 h-24">
+                    <FaBuilding className="w-8 h-8 text-primary-600" />
+                  </div>
+                )}
+                <p className="text-sm text-secondary-700 font-semibold">{client.name}</p>
+              </Card>
+            ))}
           </div>
         </div>
       </Section>
