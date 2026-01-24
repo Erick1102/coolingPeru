@@ -84,7 +84,7 @@ const BRANDS: Brand[] = [
 
 export function BrandsSection() {
   return (
-    <Section background="light" className="py-12 md:py-16">
+    <Section background="white" className="py-12 md:py-16">
       <div className="container-custom">
         <div className="text-center mb-8 md:mb-12">
           <h2 className="text-3xl md:text-4xl font-display font-bold text-secondary-900 mb-3">

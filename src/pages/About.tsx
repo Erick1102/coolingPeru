@@ -1,28 +1,19 @@
 import { Section } from '@/components/ui/Section'
 import { Card } from '@/components/ui/Card'
 import { Stat } from '@/components/ui/Stats'
-import { BENEFITS, COMPANY_VALUES, CLIENTS } from '@/constants'
+import { COMPANY_VALUES, CLIENTS } from '@/constants'
 import { 
-  FaAward, 
-  FaShieldAlt, 
-  FaDollarSign, 
-  FaClock,
   FaUsers,
   FaStar,
   FaBuilding,
   FaClock as FaClock24,
   FaHandshake,
   FaUserTie,
+  FaShieldAlt,
+  FaAward,
   FaLock,
   FaChartLine
 } from 'react-icons/fa'
-
-const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  FaAward,
-  FaShieldAlt,
-  FaDollarSign,
-  FaClock,
-}
 
 export function About() {
   return (
