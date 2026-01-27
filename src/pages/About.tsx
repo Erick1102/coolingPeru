@@ -66,10 +66,13 @@ export function About() {
           </div>
           <div>
             <Card className="p-0 overflow-hidden">
-              <div className="aspect-video bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center">
-                <span className="text-primary-600 font-semibold text-lg">
-                  Imagen de la Empresa
-                </span>
+              <div className="aspect-video bg-secondary-100 flex items-center justify-center overflow-hidden">
+                <img 
+                  src="/images/empresa.png" 
+                  alt="CoolingPerú - Nuestra Empresa"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
               </div>
             </Card>
           </div>

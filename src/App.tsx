@@ -3,6 +3,7 @@ import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs'
 import { ScrollToTop } from '@/components/ui/ScrollToTop'
+import { ScrollToTopOnRouteChange } from '@/components/ui/ScrollToTopOnRouteChange'
 import { FloatingWhatsApp } from '@/components/ui/FloatingWhatsApp'
 import { Home } from '@/pages/Home'
 import { Services } from '@/pages/Services'
@@ -18,6 +19,7 @@ function App() {
         v7_relativeSplatPath: true,
       }}
     >
+      <ScrollToTopOnRouteChange />
       <div className="min-h-screen flex flex-col">
         <Header />
         <Breadcrumbs />

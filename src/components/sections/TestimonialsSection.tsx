@@ -23,12 +23,12 @@ const testimonials = [
   },
   {
     id: '3',
-    name: 'Clínica La Luz',
-    role: 'Institución de Salud',
-    company: 'Consultorios de Clínica La Luz',
-    content: 'El servicio de climatización instalado en nuestros consultorios ha mejorado significativamente el confort de nuestros pacientes y personal. Muy satisfechos con el trabajo realizado.',
+    name: 'Corporación Educa SAC',
+    role: 'Institución Educativa',
+    company: 'Corporación Educa SAC',
+    content: 'El sistema de climatización instalado en nuestras instalaciones ha mejorado significativamente el ambiente de aprendizaje. Servicio profesional y de calidad. Muy recomendados.',
     rating: 5,
-    image: '/images/clinica_la_luz.png',
+    image: '/images/columbia.png',
   },
   {
     id: '4',
